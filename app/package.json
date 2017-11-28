@@ -1,0 +1,8 @@
+{
+  "main": "app.ts",
+  "name": "nativescript-vue-webpack",
+  "version": "0.1.0",
+  "android": {
+    "v8Flags": "--expose_gc"
+  }
+}

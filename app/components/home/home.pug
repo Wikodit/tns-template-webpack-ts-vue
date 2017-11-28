@@ -1,0 +1,11 @@
+Page.HomeComponent
+  ActionBar(title="Contact")
+    NavigationButton(
+      text="Back!"
+      android.systemIcon="ic_menu_back"
+      @tap="$router.back()"
+    )
+  StackLayout
+    Label Home
+    Label {{ message }}
+    Button(@tap="$router.push('about')") About

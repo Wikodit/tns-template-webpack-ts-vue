@@ -1,0 +1,21 @@
+{
+  "tslint.autoFixOnSave": true,
+  "stylelint.enable": false,
+  "css.validate": false,
+  "scss.validate": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "window.title": "${activeEditorMedium} –– [XYZ] projectname",
+  "files.insertFinalNewline": true,
+  "files.exclude": {
+    "**/.git": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    ".vscode": true,
+    "platforms": true
+  },
+  "stylelint.config": {
+    "extends": "./stylelint.json"
+  }
+}

@@ -1,0 +1,39 @@
+{
+    "compilerOptions": {
+        "lib": [
+            "es6",
+            "dom"
+        ],
+        "module": "es6",
+        "target": "es2015",
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "noEmitHelpers": true,
+        "noEmitOnError": true,
+        "baseUrl": ".",
+        "sourceMap": true,
+        "paths": {
+            "vue": ["./node_modules/nativescript-vue"],
+            "images": [
+                "app/assets/images"
+            ],
+            "fonts": [
+                "app/assets/fonts"
+            ],
+            "assets": [
+                "app/assets"
+            ],
+            "*": [
+                "./app/*",
+                "./node_modules/tns-core-modules/*",
+                "./node_modules/*"
+            ]
+        }
+    },
+    "exclude": [
+        "node_modules",
+        "platforms",
+        "**/*.aot.ts"
+    ]
+}

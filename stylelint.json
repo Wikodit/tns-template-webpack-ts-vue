@@ -1,0 +1,55 @@
+{
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "function-name-case": null,
+    "declaration-empty-line-before": null,
+    "at-rule-no-unknown": null,
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "ignore": [
+          "after-comment"
+        ],
+        "except": [
+          "first-nested"
+        ],
+        "ignoreAtRules": [
+          "else",
+          "include",
+          "import"
+        ]
+      }
+    ],
+    "block-opening-brace-space-before": "always",
+    "block-closing-brace-newline-after": [
+      "always",
+      {
+        "ignoreAtRules": [
+          "if",
+          "else"
+        ]
+      }
+    ],
+    "at-rule-name-space-after": "always",
+    "rule-empty-line-before": [
+      "always",
+      {
+        "except": [
+          "first-nested",
+          "after-single-line-comment"
+        ],
+        "ignore": [
+          "after-comment"
+        ]
+      }
+    ],
+    "scss/at-else-closing-brace-newline-after": "always-last-in-chain",
+    "scss/at-else-closing-brace-space-after": "always-intermediate",
+    "scss/at-else-empty-line-before": "never",
+    "scss/at-if-closing-brace-newline-after": "always-last-in-chain",
+    "scss/at-if-closing-brace-space-after": "always-intermediate"
+  }
+}

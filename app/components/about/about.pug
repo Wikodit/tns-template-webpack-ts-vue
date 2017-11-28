@@ -1,0 +1,10 @@
+Page.AboutComponent
+  ActionBar(title="About")
+    NavigationButton(
+      text="Back!"
+      android.systemIcon="ic_menu_back"
+      @tap="$router.back()"
+    )
+  StackLayout
+    Label A {{val}} component.
+    Button(@tap="onTaptap()") Contact
