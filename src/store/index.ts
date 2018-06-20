@@ -3,14 +3,26 @@ import VuexORM from '@vuex-orm/core'
 import Vuex, { StoreOptions } from 'vuex'
 export * from 'vuex'
 
-// import vuexLocalPlugin from 'lib/vuex-local'
-
 import modules from 'store/modules'
-
-import { get } from 'lib/api'
 import database from 'store/database';
 
+import VuexPersistence from 'vuex-persist'
+import { getString, setString } from 'tns-core-modules/application-settings/application-settings'
+
 Vue.use(Vuex)
+
+/**
+ * Vuex persist configuration compatible with nativescript
+ */
+const vuexLocal = new VuexPersistence({
+  saveState(key, state) {
+    setString(key, JSON.stringify(state))
+  },
+
+  restoreState(key) {
+    return JSON.parse(getString(key) || '{}')
+  },
+})
 
 export interface RootState {
 
@@ -54,7 +66,7 @@ const storeConfig: StoreOptions<RootState> = {
   },
   mutations: {},
   plugins: [
-    // vuexLocalPlugin,
+    vuexLocal.plugin,
     VuexORM.install(database)
   ],
 }

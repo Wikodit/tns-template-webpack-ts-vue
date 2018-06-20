@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "@vuex-orm/core": "^0.25.1",
+    "circular-json": "^0.5.4",
     "moment": "^2.22.2",
     "nativescript-image-cache": "^1.1.6",
     "nativescript-loading-indicator": "^2.4.0",
