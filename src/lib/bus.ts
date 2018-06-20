@@ -9,6 +9,7 @@ import {
   LaunchEventData,
   ApplicationEventData,
 } from 'tns-core-modules/application/application'
+import * as application from 'application'
 import { topmost } from 'tns-core-modules/ui/frame/frame'
 import { isAndroid } from 'tns-core-modules/platform/platform'
 import { startMonitoring, connectionType, getConnectionType } from 'tns-core-modules/connectivity/connectivity'
@@ -141,19 +142,16 @@ export class Bus extends Vue {
    */
   protected trackKeyboard() {
     if (isAndroid) {
-      const tm = topmost()
-      if (!tm) { setTimeout(() => { this.trackKeyboard() }, 200); return }
-      if (!tm.currentPage) { setTimeout(() => { this.trackKeyboard() }, 200); return }
-
-      const cv = tm.currentPage.android
-
-      cv.getViewTreeObserver().addOnGlobalLayoutListener(
+      var rootView = application.android.foregroundActivity;
+      if (!rootView) { setTimeout(() => { this.trackKeyboard() }, 200); return }
+      rootView = rootView.getWindow().getDecorView().getRootView()
+      rootView.getViewTreeObserver().addOnGlobalLayoutListener(
         new android.view.ViewTreeObserver.OnGlobalLayoutListener({
           onGlobalLayout: () => {
             // Grab the Current Screen Height
             const rect = new android.graphics.Rect()
-            cv.getWindowVisibleDisplayFrame(rect)
-            const screenHeight = cv.getRootView().getHeight()
+            rootView.getWindowVisibleDisplayFrame(rect)
+            const screenHeight = rootView.getRootView().getHeight()
             const missingSize = screenHeight - rect.bottom
 
             if (missingSize > (screenHeight * 0.15)) {
