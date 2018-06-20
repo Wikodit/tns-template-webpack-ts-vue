@@ -1,0 +1,17 @@
+Page.page.page--post-list
+  ActionBar.action-bar(title="Post list")
+
+  StackLayout
+    Label(text="This is the post list page")
+    Label(:text="post.title")
+    RadListView(
+      for="item in findAllPost()"
+    )
+      ListViewGridLayout(
+        v-tkListViewLayout="true"
+        scrollDirection="Vertical"
+        spanCount="2"
+      )
+        v-template
+          StackLayout
+            Label(:text="item.title")

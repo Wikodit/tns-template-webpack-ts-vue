@@ -1,0 +1,22 @@
+Page.page.page--home
+  ActionBar.action-bar(title="Title")
+
+  StackLayout.hello-world
+    Label.body(
+      textWrap=true
+      text="This is a hello world component, tap the button if you dare"
+    )
+
+    Button.btn.btn-primary(
+      text="See posts"
+      @tap="$navigateTo($pages.PostListPage)"
+    )
+
+    Button.btn.btn-primary(
+      text="Tap me!"
+      @tap="surprise = !surprise"
+    )
+    Image(
+      v-if="surprise"
+      src="~/images/NativeScript-Vue.png"
+    )

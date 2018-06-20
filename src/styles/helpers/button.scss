@@ -1,0 +1,14 @@
+.button {
+  & {
+    color: $background;
+    font-weight: bold;
+  }
+
+  &.button--primary {
+    background-color: $primary;
+  }
+
+  &.button--regular {
+    background-color: $secondary;
+  }
+}

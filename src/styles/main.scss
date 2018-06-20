@@ -1,0 +1,16 @@
+/* Styles here will be used on every Page */
+@import './modules/_all';
+
+// Load helpers
+@import './helpers/_all';
+
+Page {
+  background-color: white;
+  font-family: "Bambino New";
+  color: $secondary;
+}
+
+ListView {
+  opacity: 1;
+  background-color: $background;
+}
